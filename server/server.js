@@ -14,7 +14,9 @@ app.use(cors())
 const PORT = process.env.PORT || 5000
 
 connectDb()
-
+app.get('/',(req,res)=>{
+    res.json({message: 'welcome to how site'})
+})
 app.use('/api', require('./router/EventRouter'))
 app.use('/api', require('./router/UsersRouter'))
 app.use('/api', require('./router/NoteRouter'))
